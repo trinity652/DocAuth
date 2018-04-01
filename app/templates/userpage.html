@@ -1,0 +1,497 @@
+<html>
+<head>
+	<title>DocAuth</title>
+  	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width= device-width, initial-scale=1">
+	<link rel="stylesheet" href="static/css/bootstrap.css">
+	<link rel="stylesheet" href="static/css/final_css.css" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" href="static/assets/header.png" />
+	<script src="static/js/jquery.js"></script>
+	<script src="static/js/bootstrap.js"></script>
+	<style>
+		@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    line-height: 2;
+    background: #F7F7F9;
+}
+.container{
+    overflow-y: hidden;
+}
+.sb-right{
+    padding-right: 250px; /* sidebar width */
+}
+.sb-left{
+    padding-left: 250px; /* sidebar width */
+}
+.sb-open .page-wrapper{
+    position:relative;
+    left:250px;
+}
+.sb-open .sidebar{
+    width:250px;
+}
+.sb-open .sidebar .nav-list,
+.sb-open .sidebar .sidebar-logo{
+    opacity: 1;
+}
+.sidebar {
+    position: fixed;
+    height: 100%;
+    width: 250px;
+    background: #1C243B;
+    transition: all 0.5s ease;
+}
+.sidebar.left  {left:0}
+.sidebar.right {right:0}
+
+.sidebar-logo{
+    width: 100%;
+    background: #ec6f66;
+    text-align: center;
+    padding: 25px 0;
+    color: #fff;
+    line-height: 1;
+}
+.nav-list {
+    padding: 30px 0px;
+    line-height: 2em;
+}
+.nav-list ul li>a {
+    display: flex;
+    color: #7C879D;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 40px;
+    transition: .1s ease;
+    border-left: 3px solid transparent;
+}
+.nav-list ul li .active {
+    border-left:3px solid #ec6f66;
+    background-color: #13192c;
+}
+.nav-list ul li .active i:before {
+    color: #fff;
+}
+.nav-list ul li a>i {
+    width: 30px;
+}
+
+
+/* page styling*/
+
+.page-wrapper {
+    background: #F7F7F9;
+    height: 100vh;
+    transition: all 0.5s ease;
+    overflow-y: scroll;
+}
+.overlay {
+    background: #1c243b;
+    position: absolute;
+    z-index: 1;
+    top: 45px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    display:none;
+    transition: opacity .4s ease-in-out;
+}
+.overlay.show{
+    opacity: 0.5;
+}
+.topbar {
+    max-height: 0;
+    background: #1C243B;
+    transition: all .4s ease;
+}
+a.menu-btn {
+    font-size: 35px;
+    text-decoration: none;
+    margin-left: 20px;
+    line-height: initial;
+    opacity: 0;
+}
+.page-content{
+    max-width: 80%;
+    margin: auto;
+    padding-top: 25px;
+}
+div[data-content].active {
+    display: block;
+}
+
+.btn {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 12px;
+    color: #656d84;
+    border: 1.4pt solid rgba(137, 145, 169, 0.58);
+    padding: 10px 25px;
+    border-radius: 25px;
+    line-height: 1;
+}
+.btn span{
+    margin-left:10px;
+}
+.back.btn {
+    float: left;
+}
+.logout.btn {
+    float: right;
+}
+.row {
+    background: #fff;
+    -webkit-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.68);
+    -moz-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.68);
+    box-shadow: 0px 0px 20px -1px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    margin-bottom:10px;
+}
+/* Charts*/
+
+select{
+    -webkit-appearance: none; 
+   -moz-appearance: none;
+   appearance: none; 
+   border: none;
+   font-family: "Courier New", Courier, monospace;
+    font-size: 22px;
+    letter-spacing: -2px;
+    color: rgba(79, 86, 110, 0.86);
+    font-weight: bold;
+    border-bottom: 2px solid #ec6f66;
+}
+.row.statistics {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.chart-details {
+    position: absolute;
+    z-index: 1;
+    margin-left: 90px;
+    margin-top: 20px;
+
+}
+.chart-title {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 22px;
+    letter-spacing: -2px;
+    color: rgba(79, 86, 110, 0.86);
+}
+.chart-points {
+    float: right;
+    margin-top: 20px;
+    z-index: 1;
+    position: relative;
+    margin-right: 90px;
+}
+.point-ico {
+    margin-right: 5px;
+    font-style: normal;
+    font-size: 25px;
+}
+.charts {
+    min-height: 400px;
+    width: 95%;
+    margin : auto;
+    padding-top: 10px;
+}
+/* Table */
+.row.table {
+    padding-bottom: 10px;
+    height: 80%;
+    overflow-y: scroll;
+}
+.rwd-table {
+    margin: 1em 0;
+    min-width: 100%;
+}
+.rwd-table tr {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.rwd-table th {
+    display: none;
+}
+.rwd-table td {
+    display: block;
+}
+.rwd-table th, .rwd-table td {
+    text-align: left;
+}
+.rwd-table td:first-child {
+    padding-top: .5em;
+}
+.rwd-table td:last-child {
+    padding-bottom: .5em;
+}
+.rwd-table td:before {
+    content: attr(data-th) ": ";
+    font-weight: bold;
+    width: 6.5em;
+    display: inline-block;
+}
+.rwd-table {
+    background: #fff;
+    color: rgba(87, 86, 86, 0.85);;
+    border-radius: .4em;
+    overflow: hidden;
+}
+.rwd-table tr {
+    border-color: rgba(70, 99, 127, 0.03);
+}
+.rwd-table th, .rwd-table td {
+    margin: .5em 1em;
+}
+.rwd-table th, .rwd-table td:before {
+    color: #000;
+}
+
+
+
+.mrgn-60 {
+    margin-top: 60px;
+}
+.mrgn-40 {
+    margin-top: 40px;
+}
+.text-centered {
+    text-align: center;
+}
+.hidden {
+    display: none;
+}
+
+
+.nav-list ul li>a:hover  {
+    border-left:3px solid #ec6f66;
+    background-color: #13192c;
+}
+.nav-list ul li>a:hover i:before{
+    color: #fff;
+}
+
+@media screen and (max-width: 1100px) {
+    .sidebar{
+        width: 0;
+    }
+    .overlay {
+        display:block;
+    }
+    .topbar {
+        max-height: 45px;
+    }
+    .topbar a.menu-btn{
+        opacity: 1;
+    }
+    .nav-list, .sidebar-logo {
+        opacity: 0;
+    }
+    .sb-left {
+        padding-left: 0;
+    }
+}
+@media screen and (max-width: 768px) {
+    .chart-title {
+        margin-left:0;
+    }
+}
+@media screen and (max-width: 400px) {
+    .btn {
+        padding: 10px 10px;
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 480px) {
+  .rwd-table td:before {
+    display: none;
+  }
+}
+
+@media (min-width: 480px) {
+  .rwd-table th, .rwd-table td {
+    display: table-cell;
+    padding: .25em .5em;
+  }
+  .rwd-table th:first-child, .rwd-table td:first-child {
+    padding-left: 0;
+  }
+  .rwd-table th:last-child, .rwd-table td:last-child {
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 480px) {
+  .rwd-table th, .rwd-table td {
+    padding: 1em !important;
+  }
+}
+/**
+ * KEYFRAMES & ANIMATION
+ *
+ */
+div[data-content] {
+    -webkit-animation: fadeinup .4s ease forwards;
+    -moz-animation: fadeinup .4s ease forwards;
+    -ms-animation: fadeinup .4s ease forwards;
+    animation: fadeinup .4s ease forwards;
+
+}
+@-webkit-keyframes fadeinup {
+    from {transform: translateY(15%);opacity:0;}
+    to   {transform: translateY(0%);opacity:1;}
+}
+@-moz-keyframes fadeinup {
+    from {transform: translateY(15%);opacity:0;}
+    to   {transform: translateY(0%);opacity:1;}
+}
+@-ms-keyframes fadeinup {
+    from {transform: translateY(15%);opacity:0;}
+    to   {transform: translateY(0%);opacity:1;}
+}
+@keyframes fadeinup {
+    from {transform: translateY(15%);opacity:0;}
+    to   {transform: translateY(0%);opacity:1;}
+}
+
+
+
+/* icons*/
+
+.fn:before{
+    font-family: 'entypo', sans-serif;
+    font-size:19px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    color: #8991a9;
+}
+.chart-pie:before{
+    content: "\e751";
+}
+.users:before {
+    content: "\1f465";
+}
+.comment:before {
+    content: "\e718";
+}
+.chart-bar:before{
+  content:"\1f4ca";
+}.megaphone:before {
+    content:"\1f4e3";
+}
+.menu-ic:before{content:"\2630";font-size:inherit;}
+
+/*
+rest css
+*/
+
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p, ul, li,
+table, caption, tbody, tfoot, thead, tr, th, td{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+body {
+	line-height: 2;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.topbar .icon {
+    display: none;
+}
+
+
+	</style>  	
+</head>
+<body style="background-color: #dcdcdc;">	
+	<section class="navbar navbar-default cl_white" style="border-radius:0px;">
+      	<div class="container">
+      	<div class="navbar-header col-md-3">
+      	<a class="navbar-brand" href="#"><h4>DocAuth</h4></a>
+    	</div>
+      	<div class="col-md-3"></div>
+      	<div class="col-md-3 font-major myalign">
+		<a href='/upload-file'><button class="btn btn-default shadow" type="submit" style="border-radius:0px;background-color:#0072bc;color:white;margin-top:7px;">Check forgery</button></a>
+		</div>
+      	<div class="col-md-3 font-major myalign">
+       	  <ul class="nav navbar-nav">
+    	      <li><a href="/login">Logout</a></li>
+    	  </ul>
+    	  </div>
+		 <div style="padding-top:70px;">
+				<ul class="nav nav-tabs">
+				<li class="#"><a href="/analysispage"><h4>Analysis</h4></a></li>
+				<li class="active"><a href="#"><h4>Scanned Documents</h4></a></li>
+				</ul>
+		 </div>
+		</div>
+    </section>
+	<section>
+	<div class="container shadow cl_white" style="height:100vh;">
+	<table class="table table-hover">
+    <table class="rwd-table">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Date</th>
+                                    <th>Forgery</th>
+                                    <th>Forged</th>
+                                </tr>
+																{% for name,date,forgery,forged in data %}  
+																		<tr>
+																			{% for name1 in name %}
+																				<td>{{ name1 }}</td>
+																			{% endfor %}
+																			{% for date1 in date %}
+																				<td>{{ date1 }}</td>
+																			{% endfor %}
+																			{% for forgery1 in forgery %}
+																				<td>{{ forgery1 }}</td>
+																			{% endfor %}
+																			{% for forged1 in forged %}
+																				<td>{{ forged1 }}</td>	
+																			{% endfor %}
+																			
+																		</tr>
+																{% endfor %}
+                            </table>
+
+    <!--Table body-->
+
+</table>
+	</div>
+	</section>
+
+</body>
+</html>

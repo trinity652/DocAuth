@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DocAuth</title>
+  	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  	<link href="//fonts.googleapis.com/css?family=Alike|Roboto:900" rel="stylesheet" type="text/css">
+  	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+  	<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+  	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  	<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+</head>
+<body>
+    <section class="navbar navbar-default cl_white" style="border-radius:0px;">
+      	<div class="container">
+      	<div class="navbar-header col-md-3">
+      	<a class="navbar-brand" href="#">DocAuth</a>
+    	</div>
+      	<div class="col-md-3"></div>
+      	<div class="col-md-3"></div>
+      	<div class="col-md-3 font-major myalign">
+       	  <ul class="nav navbar-nav">
+    	      <li><a href="/login">Login</a></li>
+    	  </ul>
+    	  </div></div>
+    	</section>	
+    <div class="container">
+    <div style="margin-left:20%;">
+        <h3 class="page-header">Register</h3>
+        <hr>
+        {% from "_formhelpers.html" import render_field %}
+        <form method="post" action="/userregister/">
+            <dl>
+                {{ render_field(form.username) }}<br>
+                {{ render_field(form.email) }} <br>
+                {{ render_field(form.password) }}<br>
+                {{ render_field(form.confirm) }}<br>
+                {{ render_field(form.accept_tos) }}<br>
+            </dl>	
+            <p><input class="btn btn-primary" type="submit" value="Register"></p>
+        </form>
+        {% if error %}
+            <p class="error">Error:{{ error }}</p>
+        {% endif %}
+    </div>
+    </div>
+</body>
+</html>
+

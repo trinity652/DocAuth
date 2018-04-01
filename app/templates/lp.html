@@ -1,0 +1,58 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="static/css/lp.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="header">
+    <p class="tmain">DocAuth</p>
+    <h4>Comprehensive tool to detect forgery</h4><br><br>
+        <a href="/userregister" class="cta">Get started</a>
+    </div>
+    
+    <div class="main1">
+    
+            
+                <div class="tab">
+                    <button class="tablinks" onclick="openCity(event, 'a1')">
+                        <img src="static/assets/ship4.png" class="imgtab"><br>Artificial Intelligence</button>
+                    <button class="tablinks" onclick="openCity(event, 'a2')"><img src="static/assets/control6.png" class="imgtab"><br>Forgery Detection</button>
+                    <button class="tablinks" onclick="openCity(event, 'a3')"><img src="static/assets/check23.png" class="imgtab"><br>High Accuracy</button>
+                    <button class="tablinks" onclick="openCity(event, 'a4')"><img src="static/assets/shield23.png" class="imgtab"><br>Military Standard</button>
+                </div>
+
+                <div id="a1" class="tabcontent">
+                    
+                    <h3>Artificial Intelligence</h3>
+                    <p>Our platform uses artifical intelligence algorithms to accurately determine the probability of forgery in a document or image</p>
+                </div>
+
+                <div id="a2" class="tabcontent">
+                    <h3>Forgey Detection</h3>
+                    <p>Forgery is an inevitable crime in the digital world and our platform allows user to check documents for forgery using our cloud software</p> 
+                </div>
+
+                <div id="a3" class="tabcontent">
+                    <h3>High Accuracy</h3>
+                    <p>With proper training data, we are working on making it more accurate and prevent false negatives</p>
+                </div>
+                
+        <div id="a4" class="tabcontent">
+            <h3>Military Grade</h3>
+            <p>This tool is aimed for people in defense domain to facilitate the checkup of documents and prevent corruption</p>
+        </div>
+
+                <script>
+                    function openCity(evt, cityName) {
+                        var i, tabcontent, tablinks;
+                        tabcontent = document.getElementsByClassName("tabcontent");
+                        for (i = 0; i < tabcontent.length; i++) {
+                            tabcontent[i].style.display = "none";
+                        }
+                        tablinks = document.getElementsByClassName("tablinks");
+                        for (i = 0; i < tablinks.length; i++) {
+                            tablinks[i].className = tablinks[i].className.replace(" active", "");
+                        }
+                        document.getElementById(cityName).style.display = "block";
+                        evt.currentTarget.className += " active";
+                    }
+                </script>

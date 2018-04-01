@@ -1,0 +1,147 @@
+<html>
+<head>
+	<title>DocAuth</title>
+  	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width= device-width, initial-scale=1">
+	<link rel="stylesheet" href="static/css/bootstrap.css">
+	<link rel="stylesheet" href="static/css/final_css.css" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" href="static/assets/header.png" />
+	<script src="static/js/jquery.js"></script>
+	<script src="static/js/bootstrap.js"></script>
+	<style>
+		.upload-drop-zone {
+  height: 200px;
+  border-width: 2px;
+  margin-bottom: 20px;
+}
+
+/* skin.css Style*/
+.upload-drop-zone {
+  color: #ccc;
+  border-style: dashed;
+  border-color: #ccc;
+  line-height: 200px;
+  text-align: center
+}
+.upload-drop-zone.drop {
+  color: #222;
+  border-color: #222;
+}
+
+
+
+.file-preview-input {
+    position: relative;
+    overflow: hidden;
+    margin: 0px;    
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;    
+}
+.file-preview-input input[type=file] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.file-preview-input-title {
+    margin-left:2px;
+}	
+	</style>
+</head>
+<body style="background-color: #dcdcdc;">	
+	<section class="navbar navbar-default cl_white" style="border-radius:0px;">
+      	<div class="container">
+      	<div class="navbar-header col-md-3">
+      	<a class="navbar-brand" href="#"><h4>DocAuth</h4></a>
+    	</div>
+      	<div class="col-md-3"></div>
+      	<div class="col-md-3 font-major myalign">
+		<a href='/upload-file'><button class="btn btn-default shadow" type="submit" style="border-radius:0px;background-color:#0072bc;color:white;margin-top:7px;">Check forgery</button></a>
+		</div>
+      	<div class="col-md-3 font-major myalign">
+       	  <ul class="nav navbar-nav">
+    	      <li><a href="/login">Logout</a></li>
+    	  </ul>
+    	  </div>
+		 <div style="padding-top:70px;">
+				<h3 class="fc-r1">Check Forgery</h3>
+		 </div>
+		</div>
+    </section>
+	<section>
+	<div class="container shadow cl_white text-center" style="height:50vh;">
+		<form method="post" enctype="multipart/form-data">
+<div class="container"> <br />
+    <div class="row">
+    	<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading"><strong>Upload files</strong> <small> </small></div>
+				<div class="panel-body">
+					<div class="input-group file-preview">
+						<!-- don't give a name === doesn't send on POST/GET --> 
+						<span class="input-group-btn"> 
+						<!-- file-preview-clear button -->
+						<!-- file-preview-input -->
+						<div class="btn btn-default file-preview-input"> <span class="glyphicon glyphicon-folder-open"></span> <span class="file-preview-input-title">Browse</span>
+							<input type="file" accept="text/cfg" name="file" >
+						</div>
+						<button type="submit" class="btn btn-labeled btn-primary"> <span class="btn-label"><i class="glyphicon glyphicon-upload"></i> </span>Upload</button>
+						</span> </div>
+					<!-- /input-group image-preview [TO HERE]--> 
+					
+					<br />
+					
+					<!-- Drop Zone -->
+					
+	<div class="panel panel-default">
+    <div class="row clearfix">
+		<div class="col-md-12 column">
+			<table class="table table-bordered table-hover" id="tab_logic">
+				<thead>
+					<tr >
+					<th class="text-center">
+						File Name
+					</th>
+				</thead>
+				<tbody>
+					<tr>
+					</tr>
+                    <tr id='addr1'></tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+</div>
+					
+					
+					
+				
+
+				</div>
+			</div>
+		</div>
+        
+        
+        
+	</div>
+</div>
+
+</form>
+
+	</div>
+	</section>
+
+</body>
+</html>

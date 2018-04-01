@@ -1,0 +1,175 @@
+.cl_white
+{
+  background-color: white;
+}
+.font-major{
+  font-family: Roboto, sans-serif;
+  line-height: 1em;
+  letter-spacing: 0.05em;
+  font-size: 190%;
+  color: black;
+  }
+.body{
+  font-size: 16px;
+  background-color:#D3D3D3;
+}
+.myalign{
+  text-align: right;
+}
+.carousel-control.left, .carousel-control.right{
+  background-image:none !important;
+  filter :none !important;
+  opacity: none !important;
+}
+.fc{
+font-family: Roboto, sans-serif;
+color: black;
+font-weight: 100;
+line-height: 1em;
+}
+.fc-r2{
+font-family: Roboto Condensed, sans-serif;
+font-weight: 100;
+line-height: 1em;
+letter-spacing: 0.05em;
+color: black;
+}.submit{
+  background-color: transparent;
+  border-radius: 0 !important;
+  background-color: #ec6f66;
+  color: white;
+  font-weight:bold;
+  border-color: #ec6f66;
+}
+.submit:hover{
+  background-color: #ec6f66;
+  color: white;
+  border-color: #ec6f66;
+}
+
+
+.shadow{
+				box-shadow:0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+			}
+.fc-r1{
+font-family: Roboto, sans-serif;
+text-transform: uppercase;
+color: black;
+font-size: 2 em;
+font-weight: 100;
+line-height: 1em;
+}
+.fc-lg{
+font-family: Roboto, sans-serif;
+text-transform: uppercase;
+color: #1d6152;
+font-size: 1.0em;
+font-weight: 100;
+line-height: 1em;
+}
+.t1:hover{
+	border-bottom: 6px solid #ec6f66 !important;
+	box-shadow:0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+.mydiv {
+      animation: colorchange 18s;
+      -webkit-animation: colorchange 18s;
+      animation-iteration-count: 10000;
+    }
+
+    @keyframes colorchange
+    {
+      0%   {background: #ec6f66;}
+      25%  {background:#9933ff}
+      50%  {background: #ff5050}
+      75%  {background: #808080}
+      100% {background:#993366}
+    }
+
+    @-webkit-keyframes colorchange
+    {
+      0%   {background: #ec6f66;}
+      25%  {background:#9933ff}
+      50%  {background: #ff5050}
+      75%  {background: #808080}
+      100% {background:#993366}
+    }
+.quote{
+				font-family: Roboto, sans-serif;
+				font-size: 6.8em;
+				font-weight: 100;
+				letter-spacing: 0.05em;
+				color:white;
+			}
+.text-justify{
+				text-align: justify;
+				font-size: 16px;
+			}
+.font-lg{ font-size: 19px;
+}
+.bdiv1{
+	background-color:#ec6f66;
+}
+  .form-control {
+    border: 0 !important;
+}
+.form-group {
+border: 0 !important;
+}
+      .cform{
+				padding: 8px;
+				font-family: Roboto, sans-serif;
+				font-weight: 100;
+				line-height: 1em;
+				font-weight	: bold;
+        border: none ;
+        border-radius: 0 ;
+        box-shadow: none;
+				background: transparent;
+        border-bottom: 1px solid black !important;
+        color: white;
+			}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border: none;
+  box-shadow: none;
+  outline: 0 none;
+  -webkit-border: none;
+  -moz-border: none;
+   -webkit-box-shadow: none;
+   -moz-box-shadow: none;
+   -webkit-outline: 0 none;
+   -moz-outline: 0 none;
+}
+.nav-tabs > li > a{
+  border: none !important;
+  background-color: white !important;
+  color : black !important;
+}
+.nav-tabs > li > a:hover{
+    border: none !important;
+    border-radius: 0 !important;
+	background-color: white !important;
+	color : black !important;
+}
+.active{
+	border: none !important;
+	background-color: white !important;
+	border-bottom : 2px solid black !important;
+	color : black !important;
+    border-radius: 0;
+}

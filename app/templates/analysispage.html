@@ -1,0 +1,64 @@
+<html>
+<head>
+	<title>DocAuth</title>
+  	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width= device-width, initial-scale=1">
+	<link rel="stylesheet" href="static/css/bootstrap.css">
+	<link rel="stylesheet" href="static/css/final_css.css" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" href="static/assets/header.png" />
+	<script src="static/js/jquery.js"></script>
+	<script src="static/js/bootstrap.js"></script>
+	  	
+</head>
+<body style="background-color: #dcdcdc;">	
+	<section class="navbar navbar-default cl_white" style="border-radius:0px;">
+      	<div class="container">
+      	<div class="navbar-header col-md-3">
+      	<a class="navbar-brand" href="#"><h4>DocAuth</h4></a>
+    	</div>
+      	<div class="col-md-3"></div>
+      	<div class="col-md-3 font-major myalign">
+		<a href='/upload-file'><button class="btn btn-default shadow" type="submit" style="border-radius:0px;background-color:#0072bc;color:white;margin-top:7px;">Check forgery</button></a>
+		</div>
+      	<div class="col-md-3 font-major myalign">
+       	  <ul class="nav navbar-nav">
+    	      <li><a href="/login">Logout</a></li>
+    	  </ul>
+    	  </div>
+		 <div style="padding-top:70px;">
+				<ul class="nav nav-tabs">
+				<li class="active"><a href="#"><h4>Analysis</h4></a></li>
+				<li class="#"><a href="/userpage"><h4>Scanned Documents</h4></a></li>
+				</ul>
+		 </div>
+		</div>
+    </section>
+	<section class="container fc-r1" style="margin-bottom: 25px;">
+		<div class="col-md-4 shadow cl_white container" style="height:20vh;">
+			<div style="float:left;"><br><br><br><br><b>Total Pixels</b></div>
+			<div style="float:right;"></div>
+		</div>
+		<div class="col-md-1">
+		</div>
+
+		<div class="col-md-4 shadow cl_white container" style="height:20vh;">
+			<div style="float:left"><br><br><br><br><b>Pixels Forge</b>d</div>
+			<div style="float:right;"></div>
+		</div>
+		<div class="col-md-1">
+		</div>
+		
+		<div class="col-md-2 shadow cl_white container" style="height:20vh;"> 
+			<br><br><br><br><b>%Probability</b>
+		</div>
+	</section>
+	<section class="container">
+		<div class="shadow cl_white text-center" style="height:60vh;">
+		</div>
+		<br>
+	</section>
