@@ -1,0 +1,53 @@
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+htmlcov/
+.coverage
+
+# ── Environments ──────────────────────────────────────────────────────────────
+.env
+.venv/
+venv/
+env/
+
+# ── Model weights ─────────────────────────────────────────────────────────────
+weights/
+*.pt
+*.pth
+*.onnx
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_metadata
+
+# ── Data ──────────────────────────────────────────────────────────────────────
+# Uncomment if you don't want to commit test images:
+# data/
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDE ───────────────────────────────────────────────────────────────────────
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# ── Uploads / temp outputs ────────────────────────────────────────────────────
+uploads/
+outputs/
+tmp/
+*.tmp
